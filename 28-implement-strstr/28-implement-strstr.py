@@ -8,20 +8,10 @@ class Solution:
                 return 0
             else:
                 return -1
-        if needle not in haystack:
+        elif needle not in haystack:
             return -1
-        while f1!=len(haystack):
-            f2=f1+1
-            ss=haystack[f1:f2]
-            while ss in needle:
-                if ss==needle:
-                    return f1
-                elif f1==len(haystack)-1:
-                    return -1
-                else:
-                    f2+=1
-                    ss=haystack[f1:f2]
-                    
-            f1+=1
-        else:
-            return -1
+        d=len(haystack)-len(needle)
+        for i in range(d+1):
+            if haystack[i:i+len(needle)]==needle:
+                return i
+        return -1
