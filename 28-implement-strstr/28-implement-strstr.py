@@ -1,6 +1,5 @@
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
-        f1=0
         if len(needle)>len(haystack):
             return -1
         elif len(needle)==len(haystack):
