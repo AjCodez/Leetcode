@@ -6,3 +6,4 @@ class Solution:
             for j in range(length):
                 l.append(matrix[i][j])
         return sorted(l)[k-1]
+    
