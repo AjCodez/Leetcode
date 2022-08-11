@@ -3,10 +3,7 @@ class Solution:
         dp1=[]
         dp2=[]
         for i in words:
-            s=''
-            word=sorted(set(i))
-            for j in word:
-                s+=j+str(i.count(j))
+            s=sorted(i)
             if s not in dp1:
                 dp1=[s]
                 dp2.append(i)
