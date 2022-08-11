@@ -21,10 +21,8 @@ class CustomStack:
             for i in range(len(self.st)):
                 self.st[i]+=val
         else:
-            ind=0
             for i in range(k):
-                self.st[ind]+=val
-                ind+=1
+                self.st[i]+=val
 
 
 # Your CustomStack object will be instantiated and called as such:
