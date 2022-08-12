@@ -1,7 +1,6 @@
 class Solution:
     def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
         nums=nums1[:m]
-        nums2=nums2[:n]
         nums1.clear()
         m1=0
         n1=0
