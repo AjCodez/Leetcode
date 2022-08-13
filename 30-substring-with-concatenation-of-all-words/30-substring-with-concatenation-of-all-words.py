@@ -5,12 +5,12 @@ class Solution:
         for i in range(len(s)):
             if len(s[i:])<(len(words)*l):
                 break
-            words2=words.copy()
+            words2=list(words)
             j=i
             while s[i:i+l] in words2:
                 words2.remove(s[i:i+l])
                 i=i+l
-            if len(words2)==0:
+            if not words2:
                 ans.append(j)
                 
         return ans
