@@ -8,7 +8,7 @@ class Solution:
         a=sorted(str(n))
         for i in range(32):
             b=sorted(str(2**i))
-            # if Counter(str(n))==c:
+            # if Counter(str(2**i))==c:
             if a==b:
                 return True
         return False
