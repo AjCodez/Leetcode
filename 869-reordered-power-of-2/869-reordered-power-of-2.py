@@ -4,9 +4,11 @@ class Solution:
     #         return True
     #     return False
     def reorderedPowerOf2(self, n: int) -> bool:
-        c=Counter(str(n))
+        # c=Counter(str(n))
+        a=sorted(str(n))
         for i in range(32):
-            n=2**i
-            if Counter(str(n))==c:
+            b=sorted(str(2**i))
+            # if Counter(str(n))==c:
+            if a==b:
                 return True
         return False
