@@ -4,7 +4,6 @@ class Solution:
         r=0
         tl=0
         tr=len(mat)-1
-        f=True
         while l!=0 or tl!=len(mat[0])-1 or tr!=0 or r!=len(mat[0])-1:
             diag = []
             t1=l
