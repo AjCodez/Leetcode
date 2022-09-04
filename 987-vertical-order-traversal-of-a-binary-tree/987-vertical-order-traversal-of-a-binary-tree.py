@@ -24,7 +24,7 @@ class Solution:
         self.preord(m,root.left,c-1,r+1)
         self.preord(m,root.right,c+1,r+1)
         a=[]
-        for i in sorted(m.keys()):
+        for i in sorted(m):
             b=[]
             for j in sorted(m[i]):
                 b.append(j[1])
