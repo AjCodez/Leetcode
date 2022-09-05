@@ -1,6 +1,6 @@
 class Solution {
     
-    private static void nextPermutation1(int[] arr) {
+    public static void nextPermutation(int[] arr) {
 		int a = 0;
 		for (int i = arr.length - 2; i >= 0; i--) {
 			if (arr[i] < arr[i + 1]) {
@@ -34,8 +34,4 @@ class Solution {
 			j--;
 		}
 	}
-    
-    public void nextPermutation(int[] nums) {
-        nextPermutation1(nums);
-    }
 }
