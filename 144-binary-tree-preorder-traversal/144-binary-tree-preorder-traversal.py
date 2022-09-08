@@ -18,3 +18,5 @@ class Solution:
         ar=[]
         self.pot(root,ar)
         return ar
+    
+    
