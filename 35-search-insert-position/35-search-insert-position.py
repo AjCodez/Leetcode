@@ -13,4 +13,5 @@ class Solution:
             else:
                 r=m-1
                 ans=r+1
+                
         return ans
