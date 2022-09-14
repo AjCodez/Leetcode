@@ -11,17 +11,23 @@ class Solution:
         
         l5=None
         
-        while l1:
-            temp=ListNode(l1.val)
-            temp.next=l3
-            l3=temp
-            l1=l1.next
+        while l1 or l2:
+            if l1:
+                temp=ListNode(l1.val)
+                temp.next=l3
+                l3=temp
+                l1=l1.next
+            if l2:
+                temp=ListNode(l2.val)
+                temp.next=l4
+                l4=temp
+                l2=l2.next
             
-        while l2:
-            temp=ListNode(l2.val)
-            temp.next=l4
-            l4=temp
-            l2=l2.next
+        # while l2:
+        #     temp=ListNode(l2.val)
+        #     temp.next=l4
+        #     l4=temp
+        #     l2=l2.next
         
         
         c=0
