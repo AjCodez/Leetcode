@@ -9,7 +9,7 @@ class Solution:
             if i*2 in s:
                 s[i*2]-=1
                 if s[i*2]==0:
-                    s.pop(i*2)
+                    del s[i*2]
                 l.append(i)
             elif i in s:
                 s[i]+=1
