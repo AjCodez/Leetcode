@@ -16,6 +16,7 @@ class Solution {
         for(int i=0;i<height.length;i++){
             water+=Math.min(arr1[i],arr2[i])-height[i];
         }
+        
         return water;
     }
 }
