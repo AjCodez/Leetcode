@@ -1,6 +1,6 @@
 class Solution:
     def findDuplicate(self, paths: List[str]) -> List[List[str]]:
-        d=defaultdict()
+        d=defaultdict(list)
         l=[]
         
         for i in paths:
@@ -9,10 +9,7 @@ class Solution:
             for j in range(1,len(a)):
                 b=a[j].split('(')
                 c=b[1][:len(b[1])-1]
-                if c in d:
-                    d[c].append(a[0]+'/'+b[0])
-                else:
-                    d[c]=[a[0]+'/'+b[0]]
+                d[c].append(a[0]+'/'+b[0])
                     
         for i in d:
             if len(d[i])>1:
