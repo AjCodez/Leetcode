@@ -13,7 +13,9 @@ class Solution:
                     d[c].append(a[0]+'/'+b[0])
                 else:
                     d[c]=[a[0]+'/'+b[0]]
+                    
         for i in d:
             if len(d[i])>1:
                 l.append(d[i])
+                
         return l
