@@ -1,6 +1,6 @@
 class Solution:
     def findDuplicate(self, paths: List[str]) -> List[List[str]]:
-        d={}
+        d=defaultdict()
         l=[]
         
         for i in paths:
