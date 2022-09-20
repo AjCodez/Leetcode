@@ -11,6 +11,5 @@ class Solution:
                 res = max(res,len(s))
             else:
                 s = s[1:]
-                
 
         return res
