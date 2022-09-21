@@ -33,4 +33,5 @@ class Solution:
             if n==1:
                 temp.next=temp.next.next
                 break
+                
         return head
