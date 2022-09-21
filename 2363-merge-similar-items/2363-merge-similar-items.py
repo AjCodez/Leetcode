@@ -14,3 +14,4 @@ class Solution:
         l.sort(key=lambda x:x[0])
         
         return l
+    
