@@ -5,12 +5,12 @@ class Solution:
         for i in nums:
             if i%2==0:
                 sums+=i
-        for i in queries:
-            if nums[i[1]]%2==0:
-                sums-=nums[i[1]]
-            nums[i[1]]+=i[0]
-            if nums[i[1]]%2==0:
-                sums+=nums[i[1]]
+        for i,j in queries:
+            if nums[j]%2==0:
+                sums-=nums[j]
+            nums[j]+=i
+            if nums[j]%2==0:
+                sums+=nums[j]
             l.append(sums)
         return l
     
