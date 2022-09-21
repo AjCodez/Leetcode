@@ -12,4 +12,5 @@ class Solution:
         for i in d:
             l.append([i,d[i]])
         l.sort(key=lambda x:x[0])
+        
         return l
