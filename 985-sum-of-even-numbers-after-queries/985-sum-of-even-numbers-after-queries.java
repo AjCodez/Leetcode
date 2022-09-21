@@ -12,6 +12,7 @@ class Solution {
             if (nums[a[1]]%2==0) s+=nums[a[1]];
             ans[i++]=s;
         }
+        
         return ans;
     }
 }
