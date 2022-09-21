@@ -13,3 +13,4 @@ class Solution:
                 sums+=nums[i[1]]
             l.append(sums)
         return l
+    
