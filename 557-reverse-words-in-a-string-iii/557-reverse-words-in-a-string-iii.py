@@ -14,6 +14,7 @@ class Solution:
     
         s=s.split()
         ss=''
+        
         for i in s:
             ss+=i[::-1]+' '
         return ss[:len(ss)-1]
