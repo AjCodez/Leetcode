@@ -19,7 +19,6 @@ class MyCircularQueue:
             return True
         return False
             
-
     def Front(self) -> int:
         if self.q:
             return self.q[0]
