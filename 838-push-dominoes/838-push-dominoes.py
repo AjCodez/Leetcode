@@ -16,4 +16,5 @@ class Solution:
             else:
                 res += 'R' * (middle // 2) + '.' * (middle % 2) + 'L' * (middle // 2)
             i = j
+            
         return res
