@@ -10,6 +10,7 @@ class Solution:
                     a.append((i,j))
                 if img2[i][j]==1:
                     b.append((i,j))
+                    
         n=0
         for i in a:
             for j in b:
