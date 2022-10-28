@@ -14,7 +14,7 @@ class Solution:
 		    a.pop()
 		    ss(a,i+1)
 		 
-	    arr.sort()
+	   # arr.sort()
 	    ss([],0)
 	    return l
 	    
