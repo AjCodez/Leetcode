@@ -13,8 +13,9 @@ class Solution:
                 if ll:
                     l.append(sorted(ll))
                 else:
+                    l.append([0])
                     f=True
-            if f:
+            else:
                 l.append([0])
         return l
 
