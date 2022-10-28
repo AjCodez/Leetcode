@@ -3,19 +3,14 @@ class Solution:
 	def subsetSums(self, arr, N):
 		l=[]
 		
-		def ss(a,i):
-		  #  if i==N:
-		  #      return
+		def ss(i,s):
 		    if i==N:
-		        l.append(sum(a)) if a else l.append(0)
+		        l.append(s)
 		        return
-		    a.append(arr[i])
-		    ss(a,i+1)
-		    a.pop()
-		    ss(a,i+1)
+		    ss(i+1,s+arr[i])
+		    ss(i+1,s)
 		 
-	   # arr.sort()
-	    ss([],0)
+	    ss(0,0)
 	    return l
 	    
 
