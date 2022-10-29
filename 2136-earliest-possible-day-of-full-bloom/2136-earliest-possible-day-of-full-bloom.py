@@ -5,7 +5,6 @@ class Solution:
             l.append([plantTime[i],growTime[i]])
         l.sort(key=lambda x:x[1],reverse=True)
         # print(l)
-        
         ans=0
         f=0
         for i in range(len(l)):
