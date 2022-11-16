@@ -7,6 +7,7 @@
 
 class Solution:
     def guessNumber(self, n: int) -> int:
+        
         l=0
         r=n
         while(l<=r):
