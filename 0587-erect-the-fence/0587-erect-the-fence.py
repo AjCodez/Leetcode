@@ -7,6 +7,7 @@ class Solution:
         def cross(B, A, T):
             Bx, By, Ax, Ay, Tx, Ty = chain(B, A, T)
             return (Ty-By)*(Bx-Ax) - (By-Ay)*(Tx-Bx)
+        
         for T in trees: 
             while len(U) >= 2 and cross(U[-1],U[-2],T) < 0:
                 U.pop()
