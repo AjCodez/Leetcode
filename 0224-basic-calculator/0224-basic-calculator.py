@@ -1,6 +1,5 @@
 class Solution:
     def calc(self, s: str) -> int:
-        """ calc simple math without () """
         stack = []
         op = "+"
         for tok in re.findall(r"\d+|[-+*]", s):
@@ -18,7 +17,6 @@ class Solution:
     def calculate(self, s: str) -> int:
         s = s.replace(" ", "")
         while True:
-            # deal with most inner (...) each time
             sub = re.search("\([^()]+\)", s)
             if not sub:
                 break
@@ -26,5 +24,5 @@ class Solution:
             subval = self.calc(subexp[1:-1])
             s = s.replace(subexp, str(subval))
             if subval < 0:
-                s = s.replace("--", "+")  # "1-(-2)" tyope of case
+                s = s.replace("--", "+") 
         return self.calc(s)
