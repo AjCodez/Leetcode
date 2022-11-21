@@ -22,8 +22,7 @@ class Solution:
             exits.remove(entrance)
         
         
-        
-        q = [(entrance, 0)] # start, distance
+        q = [(entrance, 0)] 
         
         
         while q:
