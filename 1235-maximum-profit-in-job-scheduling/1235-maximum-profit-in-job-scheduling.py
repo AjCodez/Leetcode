@@ -16,6 +16,7 @@ class Solution:
             b=arr[i][2]+self.fun(arr,bj,memo)
         memo[i]=max(a,b)
         return max(a,b)
+    
     def jobScheduling(self, startTime: List[int], endTime: List[int], profit: List[int]) -> int:
         arr=[]
         for i in range(len(startTime)):
