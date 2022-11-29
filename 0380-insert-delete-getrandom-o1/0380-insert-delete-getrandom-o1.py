@@ -1,14 +1,14 @@
 class RandomizedSet:
 
     def __init__(self):
-        self.randSet = defaultdict()
+        self.randSet = set()
 
     def insert(self, val: int) -> bool:
         
         if val in self.randSet: 
             return False
         
-        self.randSet[val]= None
+        self.randSet.add(val)
         return True
         
         
@@ -17,13 +17,13 @@ class RandomizedSet:
         if val not in self.randSet: 
             return False
         
-        self.randSet.pop(val)
+        self.randSet.remove(val)
         return True
 
     
     def getRandom(self) -> int:
         
-        return choice(list(self.randSet.keys()))
+        return choice(list(self.randSet))
 
 # Your RandomizedSet object will be instantiated and called as such:
 # obj = RandomizedSet()
