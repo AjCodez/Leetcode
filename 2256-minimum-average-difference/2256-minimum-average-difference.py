@@ -1,7 +1,6 @@
 class Solution:
     def minimumAverageDifference(self, nums: List[int]) -> int:
         n, totalSum, leftSum = len(nums), sum(nums), 0
-        
         res = [inf,inf]
         
         for i,v in enumerate(nums):
