@@ -18,8 +18,8 @@ class Solution {
     private void trav(TreeNode root,int low, int high){
         if (root==null) return;
         if (root.val>=low && root.val<=high) s+=root.val;
-        trav(root.right,low,high);
-        trav(root.left,low,high);
+        if(root.val<high) trav(root.right,low,high);
+        if(root.val>low) trav(root.left,low,high);
     }
     
     public int rangeSumBST(TreeNode root, int low, int high) {
