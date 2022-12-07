@@ -21,6 +21,7 @@ class Solution {
         trav(root.right,low,high);
         trav(root.left,low,high);
     }
+    
     public int rangeSumBST(TreeNode root, int low, int high) {
         s=0;
         trav(root,low,high);
