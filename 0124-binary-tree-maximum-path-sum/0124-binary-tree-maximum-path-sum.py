@@ -18,9 +18,7 @@ class Solution:
         left_res = max(self.helper(root.left), 0)
         right_res = max(self.helper(root.right), 0)
         
-        # can use both child for current root
         max_path_for_this_root = root.val + left_res + right_res
         self.max_path = max(self.max_path, max_path_for_this_root)
         
-        # to be added to parent path, can only pick one of the child
         return root.val + max(left_res, right_res)  
