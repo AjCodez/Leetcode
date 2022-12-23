@@ -9,11 +9,13 @@ class Solution {
                     s.push(nums[i%nums.length]);
                     break;
                 }
+                
                 if(s.peek()>nums[i%nums.length]){
                     nums2[i%nums.length]=s.peek();
                     s.push(nums[i%nums.length]);
                     break;
                 }
+                
                 else{
                     s.pop();
                 }
