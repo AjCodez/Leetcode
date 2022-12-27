@@ -5,10 +5,8 @@ class Solution {
         }
         Arrays.sort(capacity);
         int n=0;
-        int i=0;
-        while(i<capacity.length && additionalRocks>=capacity[i]){
-            additionalRocks-=capacity[i];
-            i++;
+        while(n<capacity.length && additionalRocks>=capacity[n]){
+            additionalRocks-=capacity[n];
             n++;
         }
         return n;
