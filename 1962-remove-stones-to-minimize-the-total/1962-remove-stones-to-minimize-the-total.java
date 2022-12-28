@@ -4,10 +4,6 @@ class Solution {
         for(int i=0;i<piles.length;i++){
             prq.add(piles[i]);
         }
-        // while(!prq.isEmpty()){
-        //     System.out.println(prq.poll());
-        // }
-        // return k;
         for(int i=0;i<k;i++){
             int t=prq.poll();
             if(t%2==1) prq.add(((int)t/2)+1);
