@@ -2,8 +2,8 @@ class Solution {
     public boolean detectCapitalUse(String word) {
         int a=0;
         int b=0;
-        for(char c:word.toCharArray()){
-            if(Character.isUpperCase(c)) a++;
+        for(int i=0;i<word.length();i++){
+            if(Character.isUpperCase(word.charAt(i))) a++;
             else b++;
         }
         
