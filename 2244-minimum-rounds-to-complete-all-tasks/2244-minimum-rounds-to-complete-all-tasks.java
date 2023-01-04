@@ -10,6 +10,7 @@ class Solution {
             if(i==1) return -1;
             count +=(i+2)/3;
         }
+        
         return count;
     }
 }
