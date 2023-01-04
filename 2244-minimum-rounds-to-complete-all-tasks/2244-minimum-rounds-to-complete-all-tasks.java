@@ -3,8 +3,7 @@ class Solution {
         int count=0;
         HashMap<Integer, Integer> mp = new HashMap<>();
         for(int i:tasks){
-            if(mp.containsKey(i)) mp.put(i,mp.get(i)+1);
-            else mp.put(i,1);
+            mp.put(i,mp.getOrDefault(i,0)+1);
         }
         for(int i:mp.values()){
             if(i==1) return -1;
