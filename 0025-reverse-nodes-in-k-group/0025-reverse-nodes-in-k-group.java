@@ -15,7 +15,7 @@ class Solution {
         ListNode temp1 = head2;
         ListNode temp2 = null;
         while(head!=null){
-            if(st.size()==0) temp2 = head;
+            if(st.isEmpty()) temp2 = head;
             st.push(head);
             if(st.size()==k){
                 while(!st.isEmpty()){
