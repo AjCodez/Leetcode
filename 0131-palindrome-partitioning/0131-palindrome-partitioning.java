@@ -5,6 +5,7 @@ class Solution {
         rec(s,0);
         return res;
     }
+    
     public void rec(String s, int n){
         if(n>=s.length())
             res.add(new ArrayList(arr));
@@ -16,6 +17,7 @@ class Solution {
             }
         }
     }
+    
     public boolean isPalindrome(String s, int l, int r){
         while(l<r){
             if(s.charAt(l)!=s.charAt(r)) return false;
