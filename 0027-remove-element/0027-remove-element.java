@@ -5,6 +5,7 @@ class Solution {
             if(nums[i]==val) c++;
             else nums[i-c]=nums[i];
         }
+        
         return nums.length-c;
     }
 }
