@@ -14,19 +14,24 @@
  * }
  */
 class Solution {
-    public boolean isBalanced(TreeNode root) {
-        if(root == null) return true;
-        boolean left = isBalanced(root.left);
-        boolean right = isBalanced(root.right);
-        boolean isBal = Math.abs(ht(root.left)-ht(root.right))<=1;
-        
-        return left && right && isBal;
+    public boolean isBalanced(TreeNode root){
+        return isBalance(root).isBalanced;
     }
-    private static int ht(TreeNode root){
-        if (root == null) return -1;
-        int left= ht(root.left);
-        int right = ht(root.right);
-        
-        return Math.max(left,right)+1;
-    }
+    private BalancedPair isBalance(TreeNode node) {
+			if (node==null) return new BalancedPair();
+
+            BalancedPair lbp = isBalance(node.left);
+            BalancedPair rbp = isBalance(node.right);
+            BalancedPair cbp = new BalancedPair();
+
+            cbp.isBalanced = lbp.isBalanced && rbp.isBalanced && Math.abs(lbp.height-rbp.height)<=1;
+            cbp.height = Math.max(lbp.height,rbp.height)+1;
+            return cbp;
+			
+		}
+
+		private class BalancedPair {
+			int height = -1;
+			boolean isBalanced = true;
+		}
 }
