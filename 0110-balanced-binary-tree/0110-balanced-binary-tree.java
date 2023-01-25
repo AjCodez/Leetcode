@@ -14,10 +14,13 @@
  * }
  */
 class Solution {
+    
     public boolean isBalanced(TreeNode root){
         return isBalance(root).isBalanced;
     }
+    
     private BalancedPair isBalance(TreeNode node) {
+        
 			if (node==null) return new BalancedPair();
 
             BalancedPair lbp = isBalance(node.left);
