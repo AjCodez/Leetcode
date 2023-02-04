@@ -8,7 +8,9 @@ class Solution {
             c1[s1.charAt(i)-'a']++;
             c2[s2.charAt(i)-'a']++;
         }
+        
         if(Arrays.equals(c1,c2)) return true;
+        
         for(int i=s1.length();i<s2.length();i++){
             c2[s2.charAt(i-s1.length())-'a']--;
             c2[s2.charAt(i)-'a']++;
