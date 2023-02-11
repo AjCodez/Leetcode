@@ -15,8 +15,7 @@ class GFG {
 		    String inputLine[] = br.readLine().trim().split(" ");
 		    long[] arr = new long[n];
 		    for(int i=0; i<n; i++)arr[i]=Long.parseLong(inputLine[i]);
-		    Solution ob = new Solution();
-		    long[] res = ob.nextLargerElement(arr, n);
+		    long[] res = new Solution().nextLargerElement(arr, n);
 		    for (int i = 0; i < n; i++) 
 		        System.out.print(res[i] + " ");
 		    System.out.println();
@@ -30,22 +29,35 @@ class GFG {
 // } Driver Code Ends
 
 
-// User Function Template for JAVA
-
-class Solution{
-    public static long[] nextLargerElement(long[] arr, int n) { 
+class Solution
+{
+    //Function to find the next greater element for each element of the array.
+    public static long[] nextLargerElement(long[] arr, int n)
+    { 
         Stack<Long> st = new Stack<>();
-        long [] arr2 = new long[n];
         for(int i=n-1;i>=0;i--){
-            if(st.isEmpty()) arr2[i]=-1;
-            else if(st.peek()>arr[i]) arr2[i]=st.peek();
-            else{
-                while(!st.isEmpty() && st.peek()<=arr[i]) st.pop();
-                if(st.isEmpty()) arr2[i]=-1;
-                else arr2[i]=st.peek();
+            long temp = arr[i];
+            if(st.isEmpty()){
+                arr[i]=-1;
             }
-            st.push(arr[i]);
+            else if(st.peek()>arr[i]){
+                arr[i]=st.peek();
+            }
+            else {
+                while(!st.isEmpty() && st.peek()<=arr[i]){
+                    st.pop();
+                    if(st.isEmpty()) {
+                        arr[i]=-1;
+                        break;
+                    }
+                    else if(st.peek()>arr[i]){ 
+                        arr[i]=st.peek();
+                        break;
+                    }
+                }
+            }
+            st.push(temp);
         }
-        return arr2;
+        return arr;
     } 
 }
