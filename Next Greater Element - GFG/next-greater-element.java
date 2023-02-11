@@ -37,17 +37,9 @@ class Solution
         Stack<Long> st = new Stack<>();
         for(int i=n-1;i>=0;i--){
             long temp = arr[i];
-            while(!st.isEmpty() && st.peek()<=arr[i]){
-                    st.pop();
-                }
-                    if(st.isEmpty()) {
-                        arr[i]=-1;
-                       
-                    }
-                    else if(st.peek()>arr[i]){ 
-                        arr[i]=st.peek();
-                       
-                    }
+            while(!st.isEmpty() && st.peek()<=arr[i]) st.pop();
+            if (st.isEmpty()) arr[i]=-1;
+            else arr[i]=st.peek();
             st.push(temp);
         }
         return arr;
