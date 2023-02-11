@@ -38,8 +38,7 @@ class Solution
         for(int i=n-1;i>=0;i--){
             long temp = arr[i];
             while(!st.isEmpty() && st.peek()<=arr[i]) st.pop();
-            if (st.isEmpty()) arr[i]=-1;
-            else arr[i]=st.peek();
+            arr[i] = st.isEmpty() ? -1 : st.peek();
             st.push(temp);
         }
         return arr;
