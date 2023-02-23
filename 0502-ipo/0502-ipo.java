@@ -1,22 +1,30 @@
-public class Solution {
-    public int findMaximizedCapital(int k, int W, int[] Profits, int[] Capital) {
-        PriorityQueue<int[]> pqCap = new PriorityQueue<>((a, b) -> (a[0] - b[0]));
-        PriorityQueue<int[]> pqPro = new PriorityQueue<>((a, b) -> (b[1] - a[1]));
-        
-        for (int i = 0; i < Profits.length; i++) {
-            pqCap.add(new int[] {Capital[i], Profits[i]});
+class Solution {
+    public int findMaximizedCapital(int k, int w, int[] profits, int[] capital) {
+        PriorityQueue<int[]> can = new PriorityQueue<int[]>((a,b)-> (b[1] - a[1]));
+        PriorityQueue<int[]> cannot = new PriorityQueue<int[]>((a,b)-> (a[0] - b[0]));
+        int n = capital.length;
+        for(int i = 0; i < n; i++){
+
+            if(profits[i] > 0){
+                if(w >= capital[i]){
+                    can.add(new int[]{capital[i], profits[i]});
+                }else{
+                    cannot.add(new int[]{capital[i], profits[i]});
+                }
+            }
         }
         
-        for (int i = 0; i < k; i++) {
-            while (!pqCap.isEmpty() && pqCap.peek()[0] <= W) {
-                pqPro.add(pqCap.poll());
+        while(k-- > 0){
+            if(can.size() == 0) break;
+            
+            w += can.poll()[1];
+            
+            while(cannot.size() > 0 && w >= cannot.peek()[0]){
+                can.add(cannot.poll());
             }
             
-            if (pqPro.isEmpty()) break;
-            
-            W += pqPro.poll()[1];
         }
-        
-        return W;
+        // System.out.println(can.size());
+        return w;
     }
 }
