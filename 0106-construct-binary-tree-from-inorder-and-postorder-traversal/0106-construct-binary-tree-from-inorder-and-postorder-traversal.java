@@ -15,35 +15,24 @@
  */
 class Solution {
     public TreeNode buildTree(int[] inorder, int[] postorder) {
-        // Call the recursive function with full arrays and return the result
-        return buildTree(inorder, 0, inorder.length - 1, postorder, 0, postorder.length - 1);
-    }
-    
-    private TreeNode buildTree(int[] inorder, int inStart, int inEnd, int[] postorder, int postStart, int postEnd) {
-        // Base case
-        if (inStart > inEnd || postStart > postEnd) {
-            return null;
-        }
-        
-        // Find the root node from the last element of postorder traversal
-        int rootVal = postorder[postEnd];
-        TreeNode root = new TreeNode(rootVal);
-        
-        // Find the index of the root node in inorder traversal
-        int rootIndex = 0;
-        for (int i = inStart; i <= inEnd; i++) {
-            if (inorder[i] == rootVal) {
-                rootIndex = i;
-                break;
+        TreeNode ret = new TreeNode(), p = ret;
+        Deque<TreeNode> stk = new ArrayDeque<>();
+        int i = inorder.length-1, j = postorder.length-1;
+        while (j >= 0) {
+            p.left = new TreeNode(postorder[j]);
+            p = p.left;
+            stk.push(p);
+            while (postorder[j] != inorder[i]) {
+                p.right = new TreeNode(postorder[--j]);
+                p = p.right;
+                stk.push(p);
+            }
+            j--;
+            while (!stk.isEmpty() && stk.peek().val == inorder[i]) {
+                i--;
+                p = stk.pop();
             }
         }
-        
-        // Recursively build the left and right subtrees
-        int leftSize = rootIndex - inStart;
-        int rightSize = inEnd - rootIndex;
-        root.left = buildTree(inorder, inStart, rootIndex - 1, postorder, postStart, postStart + leftSize - 1);
-        root.right = buildTree(inorder, rootIndex + 1, inEnd, postorder, postEnd - rightSize, postEnd - 1);
-        
-        return root;
+        return ret.left;
     }
 }
